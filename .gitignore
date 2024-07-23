@@ -7,6 +7,5 @@ demo/node_modules
 demo/dist
 demo/package-lock.json
 demo/CNAME
-dist
 demo-vite
 demo-cli

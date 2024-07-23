@@ -13,7 +13,8 @@ export default commandLineArgs => {
     input: defaultConfig.entry,
     plugins: [
       replace({
-        'process.env.NODE_ENV': JSON.stringify('production')
+        'process.env.NODE_ENV': JSON.stringify('production'),
+        preventAssignment: true
       }),
       json(),
       resolve(),
