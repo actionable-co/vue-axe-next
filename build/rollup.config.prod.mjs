@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import defaultConfig from './config'
+import defaultConfig from './config.mjs'
 
 export default commandLineArgs => {
   return {
@@ -26,7 +26,7 @@ export default commandLineArgs => {
         }
       }),
       ...defaultConfig.plugins.postcss,
-      babel({
+      babel.babel({
         ...defaultConfig.plugins.babel,
         babelHelpers: 'bundled',
         presets: [
