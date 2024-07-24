@@ -22,7 +22,7 @@ export default {
     ...defaultConfig.plugins.alias,
     vue(),
     ...defaultConfig.plugins.postcss,
-    babel.babel({
+    babel({
       ...defaultConfig.plugins.babel,
       babelHelpers: 'runtime'
     }),

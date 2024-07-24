@@ -15,6 +15,7 @@ export default function useAxe (axeOptions) {
   function axeCoreRun (context, runOptions) {
     axeCore.run(context, runOptions, (error, res) => {
       try {
+        console.log('context, runOptions', context, runOptions)
         if (error) throw Error(error)
         if (JSON.stringify([...res.violations]).length === lastNotification) return
         results.value = {
@@ -43,6 +44,7 @@ export default function useAxe (axeOptions) {
 
   function violationsByImpacts (violations) {
     return violations.reduce((obj, data) => {
+      console.log('violations', obj, data)
       data = { ...data, failureSummary: getFailureSummaries(data) }
       impacts.forEach(impact => {
         if (!obj[impact]) {
@@ -57,7 +59,7 @@ export default function useAxe (axeOptions) {
   function getFailureSummaries (data) {
     const keys = ['all', 'any', 'none']
     const failures = []
-
+    console.log('getFailureSummaries', data)
     keys.forEach(key => {
       data.nodes.forEach(node => {
         node[key].length && failures.push({ errors: node[key], source: node.html })
