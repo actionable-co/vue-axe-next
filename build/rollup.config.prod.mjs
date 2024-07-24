@@ -2,7 +2,7 @@ import vue from 'rollup-plugin-vue'
 import json from '@rollup/plugin-json'
 import babel from '@rollup/plugin-babel'
 import replace from '@rollup/plugin-replace'
-import { terser } from 'rollup-plugin-terser'
+import terser from '@rollup/plugin-terser'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
@@ -26,7 +26,7 @@ export default commandLineArgs => {
         }
       }),
       ...defaultConfig.plugins.postcss,
-      babel.babel({
+      babel({
         ...defaultConfig.plugins.babel,
         babelHelpers: 'bundled',
         presets: [

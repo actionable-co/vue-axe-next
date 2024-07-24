@@ -10,7 +10,7 @@ export default function useHighlight () {
   function toggleHighlight (nodes) {
     if (highlights.value) return reset()
     highlights.value = []
-
+    console.log('toggleHighlight', nodes)
     for (const node of nodes) {
       const target = node.target[0]
       const el = document.querySelector(target)
