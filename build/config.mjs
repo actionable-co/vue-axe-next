@@ -38,8 +38,8 @@ export default {
       })
     ],
     babel: {
-        exclude: 'node_modules/**',
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue']
+      exclude: 'node_modules/**',
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue']
     }
   }
 }
