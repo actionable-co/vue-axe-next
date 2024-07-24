@@ -1,7 +1,14 @@
 import path from 'path'
+import {fileURLToPath} from 'url'
 import alias from '@rollup/plugin-alias'
 import PostCSS from 'rollup-plugin-postcss'
 import resolve from '@rollup/plugin-node-resolve'
+import { createRequire } from "module"
+import babel from '@rollup/plugin-babel';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const require = createRequire(import.meta.url);
 
 export default {
   entry: path.resolve(__dirname, '../src/index.js'),
@@ -31,8 +38,8 @@ export default {
       })
     ],
     babel: {
-      exclude: 'node_modules/**',
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue']
+        exclude: 'node_modules/**',
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue']
     }
   }
 }

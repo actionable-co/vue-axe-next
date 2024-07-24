@@ -6,7 +6,7 @@ import { eslint } from 'rollup-plugin-eslint'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import defaultConfig from './config'
+import defaultConfig from './config.mjs'
 
 export default {
   input: defaultConfig.entry,
@@ -22,7 +22,7 @@ export default {
     ...defaultConfig.plugins.alias,
     vue(),
     ...defaultConfig.plugins.postcss,
-    babel({
+    babel.babel({
       ...defaultConfig.plugins.babel,
       babelHelpers: 'runtime'
     }),
