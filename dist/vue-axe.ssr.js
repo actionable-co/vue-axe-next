@@ -94,7 +94,25 @@ var merge = /*@__PURE__*/getDefaultExportFromCjs(srcExports);const defaultOption
     branding: {
       application: 'vue-axe'
     },
-    locale: null
+    locale: null,
+    rules: [{
+      id: 'aria-allowed-attr',
+      impact: 'critical',
+      matches: 'aria-allowed-attr-matches',
+      tags: ['cat.aria', 'wcag2a', 'wcag412', 'EN-301-549', 'EN-9.4.1.2'],
+      actIds: ['5c01ea'],
+      all: [{
+        options: {
+          validTreeRowAttrs: ['aria-multiselectable'],
+          validGridRowAttrs: ['aria-multiselectable'],
+          validInputRowAttrs: ['aria-multiselectable'],
+          validTablistRowAttrs: ['aria-multiselectable']
+        },
+        id: 'aria-allowed-attr'
+      }],
+      any: [],
+      none: ['aria-unsupported-attr']
+    }]
   },
   runOptions: {
     reporter: 'v2',
@@ -115,7 +133,6 @@ function useAxe(axeOptions) {
   function axeCoreRun(context, runOptions) {
     axeCore.run(context, runOptions, (error, res) => {
       try {
-        console.log('context, runOptions', context, runOptions);
         if (error) throw Error(error);
         if (JSON.stringify([...res.violations]).length === lastNotification) return;
         results.value = {
@@ -142,7 +159,6 @@ function useAxe(axeOptions) {
   }
   function violationsByImpacts(violations) {
     return violations.reduce((obj, data) => {
-      console.log('violations', obj, data);
       data = {
         ...data,
         failureSummary: getFailureSummaries(data)
@@ -159,7 +175,6 @@ function useAxe(axeOptions) {
   function getFailureSummaries(data) {
     const keys = ['all', 'any', 'none'];
     const failures = [];
-    console.log('getFailureSummaries', data);
     keys.forEach(key => {
       data.nodes.forEach(node => {
         node[key].length && failures.push({
@@ -453,7 +468,6 @@ var referencesLinks = {
   function toggleHighlight(nodes) {
     if (highlights.value) return reset();
     highlights.value = [];
-    console.log('toggleHighlight', nodes);
     for (const node of nodes) {
       const target = node.target[0];
       const el = document.querySelector(target);
