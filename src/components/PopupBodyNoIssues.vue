@@ -4,7 +4,7 @@
       id="congratulation-title"
       class="va-text-xl va-uppercase va-text-green-800 va-text-center va-mt-3"
     >
-      {{ $vat('congrats', 'Congratulation') }}
+      {{ $vat('congrats', 'Congratulations') }}
     </h2>
     <p class="va-text-center va-mt-4">
       (0) {{ $vat('no_issues') }}
