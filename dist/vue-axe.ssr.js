@@ -84,7 +84,7 @@ function getDefaultExportFromCjs (x) {
 	        }
 	    }
 	    return result;
-	} 
+	}
 } (src, src.exports));
 
 var srcExports = src.exports;
@@ -2431,7 +2431,7 @@ var referencesLinks = {
 			Prism.plugins.fileHighlight.highlight.apply(this, arguments);
 		};
 
-	}()); 
+	}());
 } (prism));
 
 var prismExports = prism.exports;
@@ -2654,7 +2654,7 @@ const _hoisted_3$5 = {
 };
 const _hoisted_4$5 = /*#__PURE__*/vue.createStaticVNode("<div class=\"va-flex va-flex-wrap va-items-center va-justify-center va-my-4 va-pt-4\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"143.5\" height=\"179.7\"><g transform=\"translate(0 -3)\"><circle cx=\"15.3\" cy=\"15.3\" r=\"15.3\" transform=\"translate(53.7 3)\"></circle><path d=\"M69 141.1a35.3 35.3 0 01-18.4-65.4v-7a41.4 41.4 0 1057.8 50.2l-5-5a35.4 35.4 0 01-34.3 27.2z\"></path><path d=\"M53.7 90.5a15.3 15.3 0 0015.4 15.3h30.7l30.7 30.7a7.7 7.7 0 0010.8-10.8L110.6 95a15.3 15.3 0 00-10.8-4.5H84.4v-42a33.7 33.7 0 008.6-6.3l26-26a7.7 7.7 0 00-10.8-10.9l-26 26a18.4 18.4 0 01-26.1 0l-26-26a7.7 7.7 0 00-11 10.9l26.1 26a33.7 33.7 0 008.5 6.2z\"></path><text transform=\"translate(0 172.7)\" font-size=\"7\" font-family=\"Arial-BoldMT, Arial\" font-weight=\"700\"><tspan x=\"0\" y=\"0\">Created by Egon Låstad</tspan></text><text transform=\"translate(0 180.7)\" font-size=\"7\" font-family=\"Arial-BoldMT, Arial\" font-weight=\"700\"><tspan x=\"0\" y=\"0\">from the Noun Project</tspan></text></g></svg></div>", 1);
 function render$9(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$7, [vue.createElementVNode("h2", _hoisted_2$7, vue.toDisplayString(_ctx.$vat('congrats', 'Congratulation')), 1), vue.createElementVNode("p", _hoisted_3$5, " (0) " + vue.toDisplayString(_ctx.$vat('no_issues')), 1), _hoisted_4$5]);
+  return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$7, [vue.createElementVNode("h2", _hoisted_2$7, vue.toDisplayString(_ctx.$vat('congrats', 'Congratulations')), 1), vue.createElementVNode("p", _hoisted_3$5, " (0) " + vue.toDisplayString(_ctx.$vat('no_issues')), 1), _hoisted_4$5]);
 }script$9.render = render$9;var script$8 = {
   name: 'WrapperCard',
   disableAxeAudit: true,
